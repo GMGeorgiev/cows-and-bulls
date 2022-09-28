@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/culls', [CullsController::class,'getCulls'])->name('culls');
 Route::post('/storescore', [CullsController::class, 'createScore'])->name('storescore');
-
+Route::get('/scores', [CullsController::class, 'getScores'])->name('scores.display');
 Route::get('/', [CullsController::class, 'home']);
