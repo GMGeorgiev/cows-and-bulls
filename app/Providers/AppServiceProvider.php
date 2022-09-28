@@ -23,6 +23,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app['validator']->extend('dupes', function ($attribute, $value, $parameters)
+        {
+            $valueArr = str_split($value);
+            if(count(array_unique($valueArr))<count($valueArr)){
+                return false;
+            }
+            return true;
+        });
     }
 }

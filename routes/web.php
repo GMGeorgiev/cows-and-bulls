@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CullsController;
+use App\Http\Controllers\ScoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/culls', [CullsController::class,'getCulls'])->name('culls');
+Route::post('/storescore', [CullsController::class, 'createScore'])->name('storescore');
+
+Route::get('/', [CullsController::class, 'home']);
