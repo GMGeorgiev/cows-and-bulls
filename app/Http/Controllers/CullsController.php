@@ -32,7 +32,7 @@ class CullsController extends Controller
             $request->session()->forget('randCulls');
             return response()->json(['success' => $message, 'culls' => $culls, 'score' => $score]);
         } else {
-            $message = "<br/>" . $userCulls . " Result: " . "Bulls:" . $culls['bulls'] . " " . "Cows:" . $culls['cows'] . " " . implode("", $randCulls);
+            $message = "<br/>" . $userCulls . " Result: " . "Bulls:" . $culls['bulls'] . " " . "Cows:" . $culls['cows'];
             $request->session()->put('score', $score - 250);
             return response()->json(['success' => $message, 'culls' => $culls]);
         }
