@@ -15,3 +15,5 @@ php artisan serve
 ```
 To view the Bulls and Cows page go to :
 [Bulls&Cows](http://127.0.0.1:8000/)
+
+4. Run composer install
